@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Suman Dubey | Tech & Data Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Suman Dubey - AI, Data, Cloud, SRE and Business Analysis in Financial Markets." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-alt: #111729;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --card: #111827;
+      --code: #020617;
+      --chip-bg: #111827;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.75rem 1.5rem;
+      background: linear-gradient(135deg, rgba(79,70,229,0.18), rgba(15,23,42,0.95));
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    }
+    header h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.03em;
+    }
+    header h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .tagline {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      max-width: 720px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .meta span::before {
+      content: "•";
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .links {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--text);
+      background: rgba(15,23,42,0.7);
+      backdrop-filter: blur(10px);
+      transition: all 0.18s ease-out;
+    }
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #e5e7eb;
+    }
+    .btn.primary:hover {
+      box-shadow: 0 12px 30px rgba(79,70,229,0.55);
+    }
+
+    section {
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid var(--border);
+    }
+    section h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+    .chip {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid #1f2937;
+      color: #d1d5db;
+      white-space: nowrap;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        padding: 1.5rem 1.25rem 1.25rem;
+      }
+      section {
+        padding: 1.25rem 1.1rem 1.1rem;
+      }
+    }
+    p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      margin-top: 0.25rem;
+    }
+    li {
+      font-size: 0.88rem;
+      color: #d1d5db;
+      margin-bottom: 0.25rem;
+      position: relative;
+      padding-left: 1.1rem;
+    }
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+    .role {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .org {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    .time {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .code-block {
+      margin-top: 0.5rem;
+      background: var(--code);
+      border-radius: 0.6rem;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid #020617;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Suman Dubey</h1>
+        <h2>AI‑enabled Tech & Data Delivery · SRE · Business Analysis · Financial Markets</h2>
+      </div>
+      <p class="tagline">
+        I design, operationalise, and stabilise data‑intensive platforms in regulated financial environments—across trading, post‑trade,
+        cloud, and AI/GenAI services. My work sits at the intersection of <strong>business analysis, SRE, and data engineering</strong>.
+      </p>
+      <div class="meta">
+        <span>Melbourne, Australia (482 Visa – Aug 2027)</span>
+        <span>18+ years · JP Morgan · Barclays · Deutsche Bank · ANZ · DBS · FIS Global</span>
+        <span>Focus: AI/GenAI, Data Platforms, Cloud, Operational Resilience</span>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">
+          View my GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/suman-dubey-193ba922" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:Suman1.Dubey1@gmail.com">
+          Email
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <h3>About</h3>
+      <p>
+        I’m a production operations and services delivery leader turned hands‑on technologist, with deep experience across
+        <strong>investment banking, derivatives post‑trade, and large‑scale data platforms</strong>. I’ve led and supported
+        cloud migrations, ETL modernisation, and analytics platforms across AWS and Azure, while owning reliability,
+        incident management, and client outcomes.
+      </p>
+      <p>
+        Recently, my focus has been on <strong>operationalising AI‑enabled services</strong>—using SRE, AIOps, MLOps, and LLMOps
+        principles to make GenAI and data products reliable, observable, and production‑ready.
+      </p>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h3>Tech stack & interests</h3>
+        <p><strong>Data & ETL</strong></p>
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">Oracle</span>
+          <span class="chip">Informatica</span>
+          <span class="chip">DataStage</span>
+          <span class="chip">SSIS</span>
+          <span class="chip">ODI</span>
+          <span class="chip">SAP BODS</span>
+          <span class="chip">dbt Cloud</span>
+          <span class="chip">Azure Data Factory</span>
+          <span class="chip">Databricks</span>
+        </div>
+
+        <p style="margin-top:0.75rem;"><strong>Cloud, Streaming & Ops</strong></p>
+        <div class="chips">
+          <span class="chip">Azure</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Kafka</span>
+          <span class="chip">DevOps</span>
+          <span class="chip">SRE</span>
+          <span class="chip">ITIL / ITSM</span>
+        </div>
+
+        <p style="margin-top:0.75rem;"><strong>AI / Automation</strong></p>
+        <div class="chips">
+          <span class="chip">Generative AI</span>
+          <span class="chip">LLMs</span>
+          <span class="chip">AI Agents</span>
+          <span class="chip">Copilot Studio</span>
+          <span class="chip">n8n</span>
+          <span class="chip">Python</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>What I like to build</h3>
+        <ul>
+          <li>End‑to‑end data platforms (Kafka → Lakehouse → dbt → BI) with strong observability and SLAs/SLOs.</li>
+          <li>AI/GenAI‑backed internal tools that automate run‑books, incident triage, and client reporting.</li>
+          <li>Smart city / analytics‑style capstone projects that combine streaming data, ETL, and cloud.</li>
+          <li>Automation for log monitoring, alerting, and OLA/SLA tracking using scripting and low‑code tools.</li>
+        </ul>
+        <div class="code-block">
+# Example areas of work I showcase here:
+- Data & ETL pipelines (batch + streaming)
+- SRE / incident & reliability tooling
+- AI / GenAI experiments and agents
+- Financial markets analytics & dashboards
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Selected experience</h3>
+
+      <div style="margin-bottom:1rem;">
+        <div class="role">Sr. Technology Delivery Manager / SRE‑leaning BA</div>
+        <div class="org">FIS Global · Singapore & Melbourne</div>
+        <div class="time">2020 – Present</div>
+        <ul>
+          <li>Owned end‑to‑end delivery and operations for mission‑critical trading and post‑trade platforms.</li>
+          <li>Led a $1.5M cloud migration and large data‑centre upgrade across ~4,000 servers.</li>
+          <li>Designed and supported ETL‑driven, cloud‑based analytics platforms using Databricks, ADF, dbt, and Python.</li>
+          <li>Applied SRE and ITIL practices to major incident management, change, and problem management.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:1rem;">
+        <div class="role">Sr. Client Experience Manager / Business Analyst</div>
+        <div class="org">FIS Global · Singapore</div>
+        <div class="time">2017 – 2020</div>
+        <ul>
+          <li>Ran client workshops, gathered requirements, and shaped product and system specifications.</li>
+          <li>Unified fragmented reporting into Power BI, improving KPI visibility by ~40%.</li>
+          <li>Acted as first‑line escalation for Tier‑1 investment banking clients across projects and incidents.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="role">Production Support Lead (BA4) – Investment Banking</div>
+        <div class="org">Barclays Bank · Singapore</div>
+        <div class="time">2009 – 2017</div>
+        <ul>
+          <li>Provided L2/L3 support for large‑scale derivatives platforms across the full trade lifecycle.</li>
+          <li>Built automations and dashboards using Linux scripting, SQL, and HTML for monitoring and SLA tracking.</li>
+          <li>Designed CDC/SCD/ELT frameworks, improving performance by 40–60% and shrinking batch windows by up to 70%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Projects on this GitHub</h3>
+      <p>
+        This GitHub space is where I experiment, learn, and document. Some of the things you’ll find here:
+      </p>
+      <ul>
+        <li>ETL and analytics pipelines using <strong>Databricks, dbt, and Azure Data Factory</strong>.</li>
+        <li>Prototype <strong>AI/GenAI agents</strong> for incident triage, run‑book automation, and reporting.</li>
+        <li>Smart‑city or streaming‑data style capstone projects using <strong>Kafka + Lakehouse</strong>.</li>
+        <li>Utilities and scripts for <strong>log monitoring, alerting, and reliability tooling</strong>.</li>
+      </ul>
+      <p style="margin-top:0.5rem;">
+        As I add more repos, I’ll keep this page aligned with what I’m learning and shipping.
+      </p>
+    </section>
+
+    <footer>
+      Built by Suman Dubey · If you’re interested in collaborating on AI, data, or reliability projects, reach out.
+    </footer>
+  </div>
+</body>
+</html>
