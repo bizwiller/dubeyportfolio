@@ -1,86 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suman Dubey – Technology Delivery & Operations Leader</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            margin-top: 40px;
-            font-size: 24px;
-            color: #444;
-        }
-        .section {
-            background: #fff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        ul {
-            line-height: 1.8;
-        }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suman Dubey – Professional Portfolio</title>
+
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+    header { background: #1a73e8; color: #fff; padding: 20px; text-align: center; }
+    .tabs { display: flex; background: #fff; border-bottom: 2px solid #ddd; overflow-x: auto; }
+    .tabs button { flex: 1; padding: 14px; border: none; background: #fff; cursor: pointer; font-size: 16px; border-right: 1px solid #eee; }
+    .tabs button.active { background: #1a73e8; color: #fff; font-weight: bold; }
+    .content { padding: 25px; background: #fff; margin: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; }
+    ul { line-height: 1.8; }
+</style>
+
+<script>
+// ======== PROJECT DATA (EDIT THIS ONLY TO ADD NEW PROJECTS) ========
+const projectData = {
+    cloud: [
+        "Azure & AWS cloud modernization initiatives",
+        "Enterprise landing zone setup and governance",
+        "Cloud migration planning, execution, and stabilization",
+        "Automation using serverless (Lambda, Azure Functions)"
+    ],
+    data: [
+        "ETL pipelines using Fabric, Databricks, and Spark",
+        "Delta Lake ingestion and data quality frameworks",
+        "Real-time streaming using Kafka",
+        "dbt Core modeling for enterprise analytics"
+    ],
+    cyber: [
+        "Risk assessment and vulnerability remediation",
+        "Security governance across cloud and on-prem platforms",
+        "Incident response alignment with SOC teams",
+        "Compliance with ISO, APRA, and financial regulations"
+    ],
+    governance: [
+        "ITSM & ITIL-based operational governance",
+        "Incident, problem, change & release lifecycle ownership",
+        "Executive reporting, dashboards, and RCA governance",
+        "Vendor and stakeholder management"
+    ],
+    service: [
+        "Major incident management and war-room leadership",
+        "Hypercare stabilization and BAU transition",
+        "Cross-functional coordination across engineering & operations",
+        "Continuous improvement and service reliability uplift"
+    ],
+    others: [
+        "AI-driven automation & content creation",
+        "Smart City analytics platform development",
+        "Portfolio of GitHub projects and prototypes",
+        "Mentoring teams in cloud, data, and operations excellence"
+    ]
+};
+
+// ======== RENDER PROJECTS ========
+function renderProjects() {
+    for (const section in projectData) {
+        const list = document.getElementById(section + "-list");
+        projectData[section].forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            list.appendChild(li);
+        });
+    }
+}
+
+// ======== TAB SWITCHING ========
+function openTab(tabName) {
+    var i, content, tabs;
+    content = document.getElementsByClassName("content");
+    for (i = 0; i < content.length; i++) content[i].style.display = "none";
+
+    tabs = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabs.length; i++) tabs[i].classList.remove("active");
+
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.classList.add("active");
+}
+
+window.onload = renderProjects;
+</script>
+
 </head>
 <body>
-    <div class="container">
-        <h1>Suman Dubey</h1>
-        <p><strong>Technology Delivery & Operations Excellence Leader</strong><br>
-        18+ years delivering enterprise cloud, data, and digital transformation programs.</p>
 
-        <div class="section">
-            <h2>Key Skillsets</h2>
-            <ul>
-                <li>IT Service Delivery & Operations Management</li>
-                <li>Incident, Problem & Change Management (ITIL v4)</li>
-                <li>Cloud Platforms – Azure, AWS</li>
-                <li>Enterprise Data Platforms – Fabric, Databricks, Delta Lake</li>
-                <li>Workflow Orchestration – Airflow, Prefect, Dagster</li>
-                <li>Production Support & SRE Practices</li>
-                <li>Stakeholder & Vendor Management</li>
-                <li>Business Transformation & Process Optimization</li>
-            </ul>
-        </div>
+<header>
+    <h1>Suman Dubey</h1>
+    <p>Technology Delivery • Cloud • Data • Cybersecurity • Governance • Service Excellence</p>
+</header>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p>I am a Melbourne-based Technology Delivery & Operations leader with deep experience in financial markets infrastructure, cloud modernization, and enterprise data platforms. I focus on building stable, scalable, and efficient systems that support business growth.</p>
-        </div>
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('cloud')">Cloud Projects</button>
+    <button class="tab-button" onclick="openTab('data')">DATA / ETL</button>
+    <button class="tab-button" onclick="openTab('cyber')">Cybersecurity</button>
+    <button class="tab-button" onclick="openTab('governance')">Governance</button>
+    <button class="tab-button" onclick="openTab('service')">Service Delivery</button>
+    <button class="tab-button" onclick="openTab('others')">Others</button>
+</div>
 
-        <div class="section">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: sumandubey@example.com</li>
-                <li>LinkedIn: https://linkedin.com/in/sumandubey</li>
-                <li>GitHub: https://github.com/bizwiller</li>
-            </ul>
-        </div>
+<!-- CLOUD -->
+<div id="cloud" class="content" style="display:block;">
+    <h2>Cloud Projects</h2>
+    <ul id="cloud-list"></ul>
+</div>
 
-        <div class="footer">
-            © 2026 Suman Dubey
-        </div>
-    </div>
+<!-- DATA -->
+<div id="data" class="content" style="display:none;">
+    <h2>DATA / ETL</h2>
+    <ul id="data-list"></ul>
+</div>
+
+<!-- CYBER -->
+<div id="cyber" class="content" style="display:none;">
+    <h2>Cybersecurity – Vulnerabilities & Risk</h2>
+    <ul id="cyber-list"></ul>
+</div>
+
+<!-- GOVERNANCE -->
+<div id="governance" class="content" style="display:none;">
+    <h2>Governance</h2>
+    <ul id="governance-list"></ul>
+</div>
+
+<!-- SERVICE DELIVERY -->
+<div id="service" class="content" style="display:none;">
+    <h2>Service Delivery</h2>
+    <ul id="service-list"></ul>
+</div>
+
+<!-- OTHERS -->
+<div id="others" class="content" style="display:none;">
+    <h2>Others</h2>
+    <ul id="others-list"></ul>
+</div>
+
 </body>
 </html>
